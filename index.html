@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171717">
+  <meta name="description" content="Вкусно — рецепты, подборки и список покупок">
+  <title>Вкусно — рецепты</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>Вкусно</span></div>
+      <button class="icon-btn" id="open-search" aria-label="Поиск">⌕</button>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-row">
+        <div>
+          <p class="eyebrow">ИДЕИ НА КАЖДЫЙ ДЕНЬ</p>
+          <h1>Готовим с удовольствием</h1>
+          <p class="muted">Вдохновение для вкусного дня</p>
+        </div>
+        <div class="hero-emoji" aria-hidden="true">🍲</div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div><p class="eyebrow">ПОДБОРКИ</p><h2>Сезонные хиты</h2></div>
+          <button class="text-btn" data-action="all-collections">Все <span>→</span></button>
+        </div>
+        <div class="horizontal-strip" id="seasonal-strip">
+          <button class="collection-card winter" data-filter="Супы"><span class="tag">ЗИМНИЙ СУП</span><strong>Согревающие супы</strong></button>
+          <button class="collection-card vitamins" data-filter="Салаты"><span class="tag">ВИТАМИНЫ</span><strong>Лёгкие салаты</strong></button>
+          <button class="collection-card sweets" data-filter="Десерты"><span class="tag">СЛАДОСТИ</span><strong>Время десерта</strong></button>
+          <button class="collection-card quick" data-filter="Быстро"><span class="tag">БЫСТРО</span><strong>Ужин за 15 минут</strong></button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><div><p class="eyebrow">НАВИГАЦИЯ</p><h2>Категории</h2></div></div>
+        <div class="horizontal-strip categories" id="category-strip">
+          <button class="category-tile active" data-category="Все"><span>🍽️</span>Все</button>
+          <button class="category-tile" data-category="Завтраки"><span>🥞</span>Завтраки</button>
+          <button class="category-tile" data-category="Супы"><span>🍜</span>Супы</button>
+          <button class="category-tile" data-category="Паста"><span>🍝</span>Паста</button>
+          <button class="category-tile" data-category="Мясо"><span>🥩</span>Мясо</button>
+          <button class="category-tile" data-category="Салаты"><span>🥗</span>Салаты</button>
+          <button class="category-tile" data-category="Десерты"><span>🍰</span>Десерты</button>
+        </div>
+      </section>
+
+      <section class="section" id="interesting-section">
+        <div class="section-heading"><div><p class="eyebrow">ВЫБОР РЕДАКЦИИ</p><h2>Самое интересное</h2></div><button class="text-btn" data-action="sort">По рейтингу ↓</button></div>
+        <div class="recipe-grid" id="interesting-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><div><p class="eyebrow">ПОПРОБУЙ СЕГОДНЯ</p><h2>Рекомендуем попробовать</h2></div></div>
+        <div class="recipe-grid" id="recommended-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><div><p class="eyebrow">КОГДА МАЛО ВРЕМЕНИ</p><h2>Быстрый ужин за 15 минут</h2></div></div>
+        <div class="recipe-grid" id="quick-grid"></div>
+      </section>
+    </main>
+
+    <main id="secondary-content" class="hidden"></main>
+
+    <nav class="bottom-nav" aria-label="Основная навигация">
+      <button class="nav-item" data-tab="create"><span>＋</span>Создать</button>
+      <button class="nav-item active" data-tab="home"><span>☰</span>Меню</button>
+      <button class="nav-item" data-tab="discover"><span>⌕</span>Подбор</button>
+      <button class="nav-item" data-tab="shopping"><span>🛒</span>Покупки</button>
+    </nav>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modal-backdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+      <div id="modal-content"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

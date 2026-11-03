@@ -1,0 +1,6 @@
+{
+  "appId": "ru.vkusno.recipes",
+  "appName": "Вкусно",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
